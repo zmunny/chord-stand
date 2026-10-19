@@ -487,7 +487,7 @@ function renderSongs(){
  document.getElementById('ed').onclick=()=>{songView.mode='edit';renderSongs();};
  document.getElementById('dn').onclick=()=>{songView.shift=Math.max(-11,sh-1);renderSongs();};
  document.getElementById('up').onclick=()=>{songView.shift=Math.min(11,sh+1);renderSongs();};
- songsEl.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{songView.show=b.dataset.s;renderSongs();});
+ songsEl.querySelectorAll('.seg button[data-s]').forEach(b=>b.onclick=()=>{songView.show=b.dataset.s;renderSongs();});
  songsEl.querySelectorAll('.nm').forEach(b=>b.onclick=()=>{cur={root:+b.dataset.r,type:b.dataset.t};idx={guitar:0,uke:0};renderChord();tab('chords');});
  songsEl.querySelectorAll('[data-play]').forEach(b=>b.onclick=()=>strum(voicings(+b.dataset.r,b.dataset.t,b.dataset.play)[0],b.dataset.play));
 }
